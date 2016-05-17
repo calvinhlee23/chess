@@ -1,9 +1,9 @@
 require_relative 'board'
 require 'colorize'
 require_relative 'cursorable'
+
 class Display
   include Cursorable
-
   attr_reader :selected
 
   def initialize(board)
@@ -42,8 +42,8 @@ class Display
     end
     { background: bg, color: :white }
   end
-
 end
+
 if __FILE__ == $PROGRAM_NAME
   Display.new(Board.new).render
 end

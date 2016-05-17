@@ -1,7 +1,7 @@
 require_relative 'pieces'
 require_relative 'board'
 class Stepping < Pieces
-  def initialize(board, current_position)
+  def initialize(board, current_position, color)
     super
   end
 
@@ -21,7 +21,7 @@ class Knight<Stepping
     [ 2, -1],
     [ 2,  1]
   ]
-  def initialize(board, current_position)
+  def initialize(board, current_position, color)
       super
   end
 
@@ -45,7 +45,7 @@ class King < Stepping
   [0,1],
   [0,-1]
   ]
-  def initialize(board, current_position)
+  def initialize(board, current_position, color)
     super
   end
 
@@ -60,4 +60,12 @@ class King < Stepping
 end
 
 class Pawn
+  def initialize(board, current_position, color)
+    super
+  end
+
+  def make_pawn_moves
+    pawn_moves = [[1, 0]] if @color == :w
+    pawn_moves = [[-1, 0]] if @color == :b
+  end
 end

@@ -7,24 +7,26 @@ require 'byebug'
 
 class SlidingPiece < Pieces
 
-  def initialize(board, current_position)
+  def initialize(board, current_position, color)
     super
   end
 
   def moves(pos)
+    valid_position(pos)?
+    #now check if this pos is a valid position on the board.
+  end
+
+  def valid_position?(pos)
+    self.move_dirs.include?(pos)
   end
 
 
 
 end
 
-class NullPiece < Pieces
-  # include singleton
-end
-
 class Bishop < SlidingPiece
 
-  def initialize(board, current_position)
+  def initialize(board, current_position, color)
     super
   end
 
@@ -59,7 +61,7 @@ class Rook < SlidingPiece
     rook_moves
   end
   # r = Rook.new(Board.new, [1,0])
-  def initialize(board, current_position)
+  def initialize(board, current_position, color)
     super
   end
 
@@ -76,7 +78,7 @@ class Rook < SlidingPiece
 end
 
 class Queen < SlidingPiece
-  def initialize(board,current_position)
+  def initialize(board,current_position, color)
     super
   end
 
