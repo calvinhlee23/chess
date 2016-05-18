@@ -1,0 +1,10 @@
+require 'singleton'
+require 'colorize'
+require_relative 'cursorable'
+require_relative 'pieces'
+require_relative 'board'
+require_relative 'display'
+require_relative 'stepping'
+require_relative 'sliding'
+require 'byebug'
+require "io/console"

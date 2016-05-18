@@ -1,6 +1,3 @@
-require_relative 'board'
-require 'colorize'
-require_relative 'cursorable'
 
 class Display
   include Cursorable
@@ -8,7 +5,7 @@ class Display
 
   def initialize(board)
     @board = board
-    @cursor = [6,0]
+    @cursor_pos = [0, 0]
     @selected = false
   end
 
@@ -47,3 +44,6 @@ end
 if __FILE__ == $PROGRAM_NAME
   Display.new(Board.new).render
 end
+
+# l = Board.new
+# m = Display.new(l)

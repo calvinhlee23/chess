@@ -1,4 +1,3 @@
-require "io/console"
 
 module Cursorable
   KEYMAP = {
@@ -43,6 +42,7 @@ module Cursorable
     when :return, :space
       @cursor_pos
     when :left, :right, :up, :down
+      # debugger
       update_pos(MOVES[key])
       nil
     else
@@ -72,6 +72,4 @@ module Cursorable
   end
 end
 
-if __FILE__ == $PROGRAM_NAME
-  Display.new(Board.new).run
-end
+# m = Display.new(Board.new)
